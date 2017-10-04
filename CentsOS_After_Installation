@@ -3,9 +3,11 @@ magenta=`tput setaf 5`
 yellow=`tput setaf 3`
 reset=`tput sgr 0`
 bgc=`tput setab 0`
- 
-echo "${yellow}${bgc}Installation sudo, vim, htop...${reset}"
-yum install -y sudo vim htop
+
+echo "${yellow}${bgc}Updating packages...${reset}"
+yum update -y;
+echo "${yellow}${bgc}Installation sudo, vim, htop, bind-utils...${reset}"
+yum install -y sudo vim htop bind-utils;
 
 echo "${yellow}${bgc}Creating .bash_aliases, .vimrc...${reset}"
 wget https://raw.githubusercontent.com/CharmingProjects/bash_aliases/master/.bash_aliases_rpm -O ~/.bash_aliases && . ~/.bash_aliases
